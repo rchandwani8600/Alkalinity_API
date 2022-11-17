@@ -9,7 +9,7 @@ CORS(app, support_credentials=True)
 def home():
     return "HOME"
 
-@app.route("/result/<float:volH>/<float:volS>/<float:N>", methods=['GET'])
+@app.route("/result/<float:volH>/<float:volS>/<float:N>", methods=['POST'])
 @cross_origin(supports_credentials=True)
 
 def similar_to(volH,volS,N):
