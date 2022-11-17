@@ -18,6 +18,15 @@ def similar_to(volH,volS,N):
     res.headers.add("Access-Control-Allow-Origin","*")
     print(res)
     return res
+ 
+@app.route("/result/<float:volH>", methods=['GET'])
+@cross_origin(supports_credentials=True)
+def s(volH):
+    res = (volH*20*50*1000)/(30)
+    res =  jsonify(res)
+    res.headers.add("Access-Control-Allow-Origin","*")
+    print(res)
+    return res
 
 
 if  __name__ == "__main__":
